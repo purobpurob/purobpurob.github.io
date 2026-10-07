@@ -1,126 +1,86 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;800&display=swap" rel="stylesheet">
+<meta name="description" content="Thomas Borup. Links til TSLA Swing Trader, paragliding vejr, Strava, Instagram og Facebook.">
+<meta property="og:title" content="8orup.dk">
+<meta property="og:description" content="Thomas Borup">
+<meta property="og:image" content="https://8orup.dk/thomas.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>8</text></svg>">
 <title>8orup.dk</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #ffffff;
-    color: #111111;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding: 6vh 20px 40px;
-  }
-  .brand {
-    text-align: center;
-    margin-top: 24px;
-  }
-  .brand a {
-    color: #111111;
-    text-decoration: none;
-    font-size: clamp(28px, 6vw, 56px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1;
-    display: inline-block;
-  }
-  .brand a:hover { color: #000; }
-  .brand .tagline {
-    margin-top: 10px;
-    font-size: clamp(16px, 2.8vw, 22px);
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #6b7280;
-  }
-  .frame {
-    max-width: 960px;
-    width: 100%;
-  }
-  .frame img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 14px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
-  }
-  .links {
-    list-style: none;
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    max-width: 360px;
-  }
-  .links a {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 12px 18px;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    color: #111111;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .links a:hover { background: #f3f4f6; border-color: #d1d5db; }
-  .links svg, .links img {
-    width: 22px;
-    height: 22px;
-    flex-shrink: 0;
-  }
+:root{--bg:#f6f7fb;--fg:#141416;--mut:#5d5d66;--card:rgba(255,255,255,.6);--bd:rgba(20,20,22,.1);--acc:#00b4ff;--glow:rgba(0,180,255,.2);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh;overflow-x:hidden;transition:background .4s,color .4s}
+.wrap{display:grid;grid-template-columns:minmax(0,560px) 1fr;min-height:100vh}
+.photo{position:relative;overflow:hidden;order:2}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;transition:transform .2s ease-out;}
+main{display:flex;flex-direction:column;justify-content:flex-start;padding:40px 24px 48px 36px;max-width:560px;margin-left:0;order:1;position:relative;z-index:2}
+h1{width:max-content;white-space:nowrap;font-size:104px;font-family:'Inter Tight',Inter,system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;margin:0;line-height:1}
+.brand{display:block;width:100%;margin-bottom:40px}.sub{font-family:'Inter Tight',Inter,system-ui,sans-serif;display:flex;justify-content:space-between;font-size:19px;color:var(--mut);margin-top:12px;font-weight:600}.sub i{flex:0 0 .6em}
+.card{display:flex;align-items:center;gap:14px;min-height:60px;padding:10px 14px;margin-bottom:10px;background:var(--card);border:1px solid var(--bd);border-radius:16px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:inherit;text-decoration:none;opacity:0;transform:translateY(14px);animation:in .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*60ms + 150ms);transition:transform .25s,box-shadow .25s,border-color .25s}
+@keyframes in{to{opacity:1;transform:none}}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 30px var(--glow);border-color:var(--acc)}
+.ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--glow);color:var(--acc);font-size:18px;flex:none;transition:box-shadow .25s}
+.card:hover .ic{box-shadow:0 0 18px var(--glow)}
+.t{flex:1;display:flex;flex-direction:column;gap:2px;font-weight:600;font-size:15px}
+.t small{font-weight:400;color:var(--mut);font-size:12.5px}
+.up{color:var(--acc)!important;font-weight:600!important}
+.ar{width:28px;height:28px;border-radius:50%;border:1px solid var(--bd);display:grid;place-items:center;font-size:13px;color:var(--mut);transition:transform .25s,color .25s}
+.card:hover .ar{transform:translate(3px,-3px);color:var(--acc)}
+.q{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;color:var(--mut);margin:34px 0 0;text-align:center;line-height:1.5}
+footer{position:fixed;left:20px;bottom:14px;font-size:11px;letter-spacing:.15em;color:var(--mut);z-index:3}
+.tools{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:5}
+.btn{border:1px solid var(--bd);background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--fg);border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;font-family:inherit}
+#pal{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:flex-start;justify-content:center;padding-top:15vh;z-index:10}
+#pal.on{display:flex}
+.box{width:min(480px,92vw);background:var(--bg);border:1px solid var(--bd);border-radius:16px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.box input{width:100%;border:0;outline:0;background:transparent;color:var(--fg);font-size:16px;padding:12px;font-family:inherit}
+.box a{display:block;padding:12px;border-radius:10px;color:var(--fg);text-decoration:none;font-size:15px}
+.box a:hover,.box a.sel{background:var(--glow)}
+@media (min-width:821px){.photo{margin-left:-150px}.photo img{object-fit:contain;object-position:center top}}
+@media (max-width:820px){
+.wrap{display:block}
+.photo{position:absolute;inset:0 0 auto 0;height:52vh}
+main{margin:34vh 0 0;max-width:none;padding:28px 18px 70px;background:var(--bg);border-radius:28px 28px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.08)}
+.sub{font-size:15px}.card{min-height:64px}}
+@media (prefers-reduced-motion:reduce){.card{animation:none;opacity:1;transform:none}.photo img{transition:none}}
+#tt{position:fixed;top:60px;right:16px;max-width:260px;padding:10px 14px;border-radius:12px;background:var(--fg);color:var(--bg);font-size:13px;line-height:1.4;opacity:0;pointer-events:none;transform:translateY(-6px);transition:.25s}#tt.on{opacity:1;transform:none}
 </style>
 </head>
 <body>
-  <div class="frame">
-    <img src="logo.jpeg" alt="Borup paragliding weather">
-  </div>
-  <div class="brand">
-    <a href="https://8orup.dk">8orup.dk</a>
-    <div class="tagline">Thomas Borup</div>
-  </div>
-
-  <ul class="links">
-    <li>
-      <a href="https://8orup.dk" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M2 12h20"/>
-          <path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/>
-        </svg>
-        8orup.dk
-      </a>
-    </li>
-    <li>
-      <a href="https://www.strava.com/athletes/14524845" target="_blank" rel="noopener">
-        <img src="https://cdn.simpleicons.org/strava" alt="" aria-hidden="true">
-        Strava
-      </a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com/borupinsta" target="_blank" rel="noopener">
-        <img src="https://cdn.simpleicons.org/instagram" alt="" aria-hidden="true">
-        Instagram
-      </a>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/thomas.borup.7/" target="_blank" rel="noopener">
-        <img src="https://cdn.simpleicons.org/facebook" alt="" aria-hidden="true">
-        Facebook
-      </a>
-    </li>
-  </ul>
+<div class="tools"><button class="btn" id="k" aria-label="Gem som bogmærke" style="display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Bogmærke</button><div id="tt"></div></div>
+<div class="wrap">
+<div class="photo"><img id="img" alt="Thomas Borup" src="thomas.jpg"></div>
+<main>
+<div class="brand"><h1>8orup.dk</h1><div class="sub" aria-label="THOMAS BORUP"><span>T</span><span>H</span><span>O</span><span>M</span><span>A</span><span>S</span><i></i><span>B</span><span>O</span><span>R</span><span>U</span><span>P</span></div></div>
+<a class="card" style="--i:0" href="https://8orup.dk" target="_blank" rel="noopener noreferrer"><span class="ic">◍</span><span class="t">8orup.dk<small>Website</small></span><span class="ar">↗</span></a>
+<a class="card" style="--i:1" href="https://8orup.dk/tsla" target="_blank" rel="noopener noreferrer"><span class="ic">↗</span><span class="t">TSLA Swing Trader<small class="up">$248,10 · +2,4 %</small></span><span class="ar">↗</span></a>
+<a class="card" style="--i:2" href="https://8orup.dk/pg" target="_blank" rel="noopener noreferrer"><span class="ic">≋</span><span class="t">Paragliding Weather Forecast<small>5 m/s fra SV · flyvbart nu</small></span><span class="ar">↗</span></a>
+<a class="card" style="--i:3" href="https://www.strava.com/athletes/14524845" target="_blank" rel="noopener noreferrer"><span class="ic">▲</span><span class="t">Strava<small>42 km denne uge</small></span><span class="ar">↗</span></a>
+<a class="card" style="--i:4" href="https://www.instagram.com/borupinsta" target="_blank" rel="noopener noreferrer"><span class="ic">◎</span><span class="t">Instagram<small>@borupinsta</small></span><span class="ar">↗</span></a>
+<a class="card" style="--i:5" href="https://www.facebook.com/thomas.borup.7/" target="_blank" rel="noopener noreferrer"><span class="ic">f</span><span class="t">Facebook<small>Connect</small></span><span class="ar">↗</span></a>
+<p class="q">“Where we're going, we don't need roads.”</p>
+</main>
+</div>
+<footer>© 2026 THOMAS BORUP</footer>
+<div id="pal"><div class="box"><input id="in" placeholder="Hop til..."><a href="https://8orup.dk" target="_blank" rel="noopener noreferrer">8orup.dk</a><a href="https://8orup.dk/tsla" target="_blank" rel="noopener noreferrer">TSLA Swing Trader</a><a href="https://8orup.dk/pg" target="_blank" rel="noopener noreferrer">Paragliding Weather Forecast</a><a href="https://www.strava.com/athletes/14524845" target="_blank" rel="noopener noreferrer">Strava</a><a href="https://www.instagram.com/borupinsta" target="_blank" rel="noopener noreferrer">Instagram</a></div></div>
+<script>
+document.getElementById('k').onclick=()=>{const u=navigator.userAgent,m=/Mac/.test(u)&&!/iPhone|iPad/.test(u),i=/iPhone|iPad/.test(u),a=/Android/.test(u);
+const x=document.getElementById('tt');x.textContent=m?'Tryk ⌘D for at gemme siden som bogmærke':i?'Tryk på del-ikonet og vælg Føj til bogmærker':a?'Åbn browserens menu og vælg stjerne ikonet':'Tryk Ctrl+D for at gemme siden som bogmærke';
+x.classList.add('on');clearTimeout(window._t);window._t=setTimeout(()=>x.classList.remove('on'),3500)};
+const h=document.querySelector('h1'),br=document.querySelector('.brand');
+const fit=()=>{h.style.fontSize='100px';h.style.fontSize=(100*br.clientWidth/h.getBoundingClientRect().width)+'px'};
+fit();addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);
+const r=document.documentElement,p=document.getElementById('pal');
+const tog=()=>{p.classList.toggle('on');if(p.classList.contains('on'))document.getElementById('in').focus()};
+p.onclick=e=>{if(e.target===p)tog()};
+addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();tog()}if(e.key==='Escape')p.classList.remove('on')});
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){const im=document.getElementById('img');addEventListener('mousemove',e=>{im.style.transform=`translate(${(e.clientX/innerWidth-.5)*-14}px,${(e.clientY/innerHeight-.5)*-8}px) scale(1.03)`})}
+</script>
 </body>
 </html>
