@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#f6f7fb">
 <title>8orup.dk</title>
 <style>
-:root{--bg:#f6f7fb;--fg:#141416;--mut:#5d5d66;--card:rgba(255,255,255,.6);--bd:rgba(20,20,22,.1);--acc:#0096e0;--glow:rgba(0,150,224,.2);
+:root{--bg:#f6f7fb;--fg:#141416;--mut:#5d5d66;--card:rgba(255,255,255,.6);--bd:rgba(20,20,22,.1);--acc:#4a75bd;--glow:rgba(74,117,189,.16);
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
@@ -22,7 +22,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;transition:transform .2s ease-out;}
 main{display:flex;flex-direction:column;justify-content:flex-start;padding:40px 24px 48px 36px;max-width:560px;margin-left:0;order:1;position:relative;z-index:2}
 h1{width:max-content;white-space:nowrap;font-size:104px;font-family:'Inter Tight',Inter,system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;margin:0;line-height:1}
-.brand{display:block;width:100%;margin-bottom:40px}.sub{font-family:'Inter Tight',Inter,system-ui,sans-serif;display:flex;justify-content:space-between;font-size:19px;color:var(--mut);margin-top:12px;font-weight:600}.sub i{flex:0 0 .6em}
+.brand{display:block;width:100%;margin-bottom:40px}.sub{font-family:'Inter Tight',Inter,system-ui,sans-serif;display:flex;justify-content:space-between;font-size:19px;color:var(--fg);margin-top:12px;font-weight:600}.sub i{flex:0 0 .6em}
 .card{display:flex;align-items:center;gap:14px;min-height:60px;padding:10px 14px;margin-bottom:10px;background:var(--card);border:1px solid var(--bd);border-radius:16px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:inherit;text-decoration:none;opacity:0;transform:translateY(14px);animation:in .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*60ms + 150ms);transition:transform .25s,box-shadow .25s,border-color .25s}
 @keyframes in{to{opacity:1;transform:none}}
 .card:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
