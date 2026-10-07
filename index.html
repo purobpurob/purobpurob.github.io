@@ -44,12 +44,13 @@ footer{position:fixed;left:20px;bottom:14px;font-size:11px;letter-spacing:.15em;
 .box a:hover,.box a.sel{background:var(--glow)}
 @media (min-width:821px){.photo{margin-left:-150px}.photo img{object-fit:contain;object-position:center top}}
 @media (max-width:820px){
-.wrap{display:block;min-height:0}
-.photo{position:relative;margin:0;height:46svh;min-height:300px}
-.photo img{object-fit:cover;object-position:60% 12%}
-main{position:relative;margin:-30px 0 0;max-width:none;padding:28px 18px 20px;background:var(--bg);border-radius:28px 28px 0 0;box-shadow:0 -14px 30px rgba(20,20,40,.07)}
-.card{min-height:64px}
-.q{font-size:18px;margin-top:26px}
+.wrap{display:flex;flex-direction:column;min-height:0}
+main{display:contents}
+.brand{order:0;width:auto;margin:60px 18px 4px}
+.photo{order:1;position:relative;margin:0 0 14px;height:44svh;min-height:290px}
+.photo img{object-fit:cover;object-position:60% 8%}
+.card{order:2;min-height:64px;margin:0 18px 10px}
+.q{order:3;font-size:18px;margin:22px 18px 0}
 footer{position:static;text-align:center;padding:6px 0 28px}
 .tools{top:calc(12px + env(safe-area-inset-top,0px))}}
 @media (prefers-reduced-motion:reduce){.card{animation:none;opacity:1;transform:none}.photo img{transition:none}}
