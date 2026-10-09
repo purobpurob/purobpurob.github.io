@@ -78,6 +78,8 @@ section{padding:72px 0}
 .proj ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
 .proj li{display:flex;gap:10px;align-items:flex-start}
 .proj li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;margin-top:9px;background:currentColor;opacity:.8}
+.spots{display:flex;flex-wrap:wrap;gap:8px}
+.spots span{font-size:13px;font-weight:500;padding:5px 11px;border-radius:999px;background:var(--glow);color:var(--pg)}
 .go{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:8px;font-weight:600}
 .go i{font-style:normal;transition:transform .25s}
 .proj:hover .go i{transform:translateX(4px)}
@@ -189,6 +191,7 @@ footer{padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px));text-align:ce
               <li>Forecasts per flying site</li>
               <li>Built for a quick check before you pack the wing</li>
             </ul>
+            <div class="spots" aria-label="Flying sites"><span>Heatherhill</span><span>Kyndeløse</span><span>Gilleleje Feriecenter</span><span>Hammars Backar</span></div>
             <span class="go">Check the forecast <i>→</i></span>
           </div>
         </a>
