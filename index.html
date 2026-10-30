@@ -18,7 +18,7 @@
   --bg:#f6f7fb;--fg:#141416;--mut:#5d5d66;--card:rgba(255,255,255,.7);--bd:rgba(20,20,22,.1);
   --acc:#1f62a0;--glow:rgba(31,98,160,.14);
   --pg:#1f62a0;--pg-soft:#e3f2f8;
-  --yt:#c2410c;
+  
   --ts:#e0393e;--ts-up:#27a567;--ts-bg:#141416;
   --r:20px;--max:1120px;
 }
@@ -86,12 +86,10 @@ section{padding:72px 0}
 .proj:hover .go i{transform:translateX(4px)}
 .pg .tag,.pg .go,.pg li::before{color:var(--pg)}
 .ts .tag,.ts .go,.ts li::before{color:var(--pg)}
-.yt .tag,.yt .go,.yt li::before{color:var(--yt)}
-.yt .spots span{background:rgba(224,57,62,.1);color:var(--yt)}
+.yt .tag,.yt .go,.yt li::before{color:var(--pg)}
+.art .music{object-position:50% 60%;background:#000}
 .proj.wide{grid-column:1/-1;flex-direction:row}
-.proj.wide .art{flex:0 0 50%;aspect-ratio:auto;min-height:340px}
-@keyframes eq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
-.bars rect{transform-box:fill-box;transform-origin:center;animation:eq 1.6s ease-in-out infinite}
+.proj.wide .art{flex:0 0 55%;aspect-ratio:auto;min-height:340px;background:#000}
 
 /* Waves animation in PG art */
 @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-200px)}}
@@ -186,6 +184,21 @@ footer{padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px));text-align:ce
       </div>
 
       <div class="projects">
+        <!-- YouTube music -->
+        <a class="proj yt wide rv" href="https://www.youtube.com/@8orup" target="_blank" rel="noopener noreferrer">
+          <div class="art" aria-hidden="true">
+            <img class="photo music" src="music.jpg" alt="" loading="lazy">
+          </div>
+          <div class="body">
+            <span class="tag">Music / YouTube</span>
+            <h3>8ORUP Music</h3>
+            <p>My YouTube channel with Afro House, Deep House and chilled house. Organic percussion, hypnotic grooves and atmospheric soundscapes.</p>
+            <p>From late-night drives and rooftop views to moments of reflection and deep focus. Music that moves both body and mind, made to be felt and not just heard.</p>
+            <div class="spots" aria-label="Genres"><span>Afro House</span><span>Deep House</span><span>Chill House</span></div>
+            <span class="go">Listen on YouTube <i>→</i></span>
+          </div>
+        </a>
+
         <!-- Paragliding -->
         <a class="proj pg rv" href="/pg">
           <div class="art" aria-hidden="true">
@@ -232,35 +245,6 @@ footer{padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px));text-align:ce
               <li>Analysis and research, not financial advice</li>
             </ul>
             <span class="go">Open the analysis <i>→</i></span>
-          </div>
-        </a>
-
-        <!-- YouTube music -->
-        <a class="proj yt wide rv" href="https://www.youtube.com/@8orup" target="_blank" rel="noopener noreferrer">
-          <div class="art" aria-hidden="true">
-            <svg viewBox="0 0 640 400" preserveAspectRatio="xMinYMid slice">
-              <defs><linearGradient id="ytbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a1d12"/><stop offset=".55" stop-color="#7a2e12"/><stop offset="1" stop-color="#c2410c"/></linearGradient></defs>
-              <rect width="640" height="400" fill="url(#ytbg)"/>
-              <circle cx="470" cy="150" r="90" fill="#f6b26b" opacity=".18"/>
-              <circle cx="470" cy="150" r="54" fill="#f6b26b" opacity=".22"/>
-              <g class="bars" fill="#ffe2c4" opacity=".85" id="bars"></g>
-              <g font-family="Inter Tight,Inter,sans-serif" font-weight="700">
-                <text x="28" y="56" fill="#ffffff" font-size="28">8ORUP</text>
-                <text x="128" y="56" fill="#f6b26b" font-size="18">♪ music</text>
-              </g>
-            </svg>
-          </div>
-          <div class="body">
-            <span class="tag">Music / YouTube</span>
-            <h3>8ORUP Music</h3>
-            <p>My YouTube channel with Afro House, Deep House and chilled house. Organic percussion, hypnotic grooves and atmospheric soundscapes.</p>
-            <ul>
-              <li>Original music and curated mixes</li>
-              <li>Cinematic visuals to go with the sound</li>
-              <li>Inspired by self-discovery and personal growth</li>
-            </ul>
-            <div class="spots" aria-label="Genres"><span>Afro House</span><span>Deep House</span><span>Chill House</span></div>
-            <span class="go">Listen on YouTube <i>→</i></span>
           </div>
         </a>
       </div>
@@ -313,16 +297,6 @@ footer{padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px));text-align:ce
     const w=document.createElementNS(ns,'line');w.setAttribute('x1',x);w.setAttribute('x2',x);w.setAttribute('y1',y-h);w.setAttribute('y2',y+h);w.setAttribute('stroke',c);w.setAttribute('opacity','.35');g.appendChild(w);
     const r=document.createElementNS(ns,'rect');r.setAttribute('x',x-6);r.setAttribute('y',y-h/2);r.setAttribute('width',12);r.setAttribute('height',h);r.setAttribute('rx',2);r.setAttribute('fill',c);r.setAttribute('opacity','.35');g.appendChild(r);
   });
-})();
-
-// Equalizer bars for the music illustration
-(function(){
-  const g=document.getElementById('bars'),ns='http://www.w3.org/2000/svg';
-  for(let i=0;i<30;i++){
-    const x=28+i*20,h=40+((i*53)%120);
-    const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',330-h/2);r.setAttribute('width',10);r.setAttribute('height',h);r.setAttribute('rx',5);
-    r.style.animationDelay=(-(i*0.17)%1.6)+'s';g.appendChild(r);
-  }
 })();
 
 // Reveal on scroll
