@@ -88,8 +88,9 @@ section{padding:72px 0}
 .ts .tag,.ts .go,.ts li::before{color:var(--pg)}
 .yt .tag,.yt .go,.yt li::before{color:var(--pg)}
 .art .music{object-position:50% 60%;background:#000}
-.proj.wide{grid-column:1/-1;flex-direction:row}
-.proj.wide .art{flex:0 0 55%;aspect-ratio:auto;min-height:340px;background:#000}
+.proj.wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.proj.wide .art{aspect-ratio:auto;min-height:340px;background:#000}
+.proj.wide .body{padding-left:2px}
 
 /* Waves animation in PG art */
 @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-200px)}}
@@ -134,7 +135,8 @@ footer{padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px));text-align:ce
   .hero{grid-template-columns:1fr;gap:8px;padding-top:28px}
   .portrait{order:-1;justify-self:center;max-width:360px;max-height:none}
   .projects,.about{grid-template-columns:1fr}
-  .proj.wide{flex-direction:column}
+  .proj.wide{display:flex;flex-direction:column}
+  .proj.wide .body{padding-left:22px}
   .proj.wide .art{flex:none;aspect-ratio:16/10;min-height:0}
   .about{gap:28px}
   .head{flex-direction:column;align-items:start;gap:8px}
